@@ -1,0 +1,33 @@
+{
+    "project": {
+        "name": "bb-picker",
+        "version": "0.0.0"
+    },
+    "files": {
+        "src/bb-picker.js": {
+            "name": "src/bb-picker.js",
+            "modules": {
+                "BbPicker": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "BbPicker": {
+            "name": "BbPicker",
+            "submodules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/bb-picker.js",
+            "line": 5,
+            "description": "AMD module."
+        }
+    },
+    "classes": {},
+    "classitems": [],
+    "warnings": []
+}

@@ -1,0 +1,16 @@
+{
+  "name": "bb-picker",
+  "main": "built/bb-picker.js",
+  "version": "0.0.0",
+  "description": "Some module...",
+  "dependencies": {
+    "bbcv": "0.7.11"
+  },
+  "devDependencies": {
+    "requirejs": "*",
+    "requirejs-text": "*",
+    "underscore": "*",
+    "jquery": "*",
+    "qunit": "*"
+  }
+}

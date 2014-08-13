@@ -1,0 +1,3 @@
+# bb-picker[![Build Status](https://secure.travis-ci.org/simonfan/bb-picker.png?branch=master)](http://travis-ci.org/simonfan/bb-picker)
+
+Some module...
