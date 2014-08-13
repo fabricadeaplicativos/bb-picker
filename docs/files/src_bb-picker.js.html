@@ -100,9 +100,19 @@ define(function (require, exports, module) {
 	&#x27;use strict&#x27;;
 
 	var bbcv = require(&#x27;bbcv&#x27;),
-		view = require(&#x27;lowercase-backbone&#x27;).view;
+		view = require(&#x27;lowercase-backbone&#x27;).view,
+		_    = require(&#x27;lodash&#x27;);
 
-
+	/**
+	 * View for a single item.
+	 * Basically sets the cid onto the $el
+	 * for the colleciton view to be capalble of retrieving
+	 * the model.
+	 *
+	 * @param  {[type]} options) {						view.prototype.initialize.call(this, options);						this.$el.data(&#x27;__pickerItemModelCid&#x27;, options.model.cid);		} [description]
+	 * @param  {[type]} }       [description]
+	 * @return {[type]}          [description]
+	 */
 	var pickerItemView = view.extend({
 		initialize: function initializePickerItemView(options) {
 			// initialize oriiginal
@@ -116,14 +126,38 @@ define(function (require, exports, module) {
 
 	module.exports = bbcv.extend({
 
+		/**
+		 * Picks some options.
+		 *
+		 * @param  {[type]} options [description]
+		 * @return {[type]}         [description]
+		 */
+		initialize: function initializeBbPicker(options) {
+			// initialize collection view.
+			bbcv.prototype.initialize.call(this, options);
+
+			// pick some options
+			_.each([&#x27;callback&#x27;], function (prop) {
+				this[prop] = options[prop] || this[prop];
+			}, this);
+		},
+
 		events: {
 			&#x27;click &gt; *&#x27;: &#x27;handleItemClick&#x27;
 		},
 
+		/**
+		 * Handles click events
+		 * @param  {[type]} e [description]
+		 * @return {[type]}   [description]
+		 */
 		handleItemClick: function handleItemClick(e) {
 			var $el = $(e.currentTarget);
 
-			return this.collection.get($el.data(&#x27;__pickerItemModelCid&#x27;));
+			// run the callback passing the picked model as first argument.
+			this.callback(this.collection.get($el.data(&#x27;__pickerItemModelCid&#x27;)));
+
+			return false;
 		},
 
 		modelView: pickerItemView

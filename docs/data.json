@@ -28,6 +28,79 @@
         }
     },
     "classes": {},
-    "classitems": [],
-    "warnings": []
+    "classitems": [
+        {
+            "file": "src/bb-picker.js",
+            "line": 18,
+            "description": "View for a single item.\nBasically sets the cid onto the $el\nfor the colleciton view to be capalble of retrieving\nthe model.",
+            "params": [
+                {
+                    "name": "options)",
+                    "description": "{\t\t\t\t\t\tview.prototype.initialize.call(this, options);\t\t\t\t\t\tthis.$el.data('__pickerItemModelCid', options.model.cid);\t\t} [description]",
+                    "type": "[type]"
+                },
+                {
+                    "name": "}",
+                    "description": "[description]",
+                    "type": "[type]"
+                }
+            ],
+            "return": {
+                "description": "[description]",
+                "type": "[type]"
+            },
+            "class": "",
+            "module": "BbPicker"
+        },
+        {
+            "file": "src/bb-picker.js",
+            "line": 41,
+            "description": "Picks some options.",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "[description]",
+                    "type": "[type]"
+                }
+            ],
+            "return": {
+                "description": "[description]",
+                "type": "[type]"
+            },
+            "class": "",
+            "module": "BbPicker"
+        },
+        {
+            "file": "src/bb-picker.js",
+            "line": 61,
+            "description": "Handles click events",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "[description]",
+                    "type": "[type]"
+                }
+            ],
+            "return": {
+                "description": "[description]",
+                "type": "[type]"
+            },
+            "class": "",
+            "module": "BbPicker"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nView for a single item.\nBasically sets the cid onto the $el\nfor the colleciton view to be capalble of retrieving\nthe model.",
+            "line": " src/bb-picker.js:18"
+        },
+        {
+            "message": "Missing item type\nPicks some options.",
+            "line": " src/bb-picker.js:41"
+        },
+        {
+            "message": "Missing item type\nHandles click events",
+            "line": " src/bb-picker.js:61"
+        }
+    ]
 }

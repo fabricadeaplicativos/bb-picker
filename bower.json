@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "description": "Some module...",
   "dependencies": {
-    "bbcv": "0.7.12"
+    "bbcv": "0.7.13"
   },
   "devDependencies": {
     "requirejs": "*",
@@ -14,7 +14,6 @@
     "qunit": "*"
   },
   "resolutions": {
-    "bbcv": "0.7.12",
-    "lowercase-backbone": "0.3.8"
+    "bbcv": "0.7.13"
   }
 }
