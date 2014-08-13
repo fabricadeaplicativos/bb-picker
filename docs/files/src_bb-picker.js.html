@@ -137,10 +137,17 @@ define(function (require, exports, module) {
 			bbcv.prototype.initialize.call(this, options);
 
 			// pick some options
-			_.each([&#x27;callback&#x27;], function (prop) {
+			_.each([&#x27;callback&#x27;, &#x27;selectedClass&#x27;], function (prop) {
 				this[prop] = options[prop] || this[prop];
 			}, this);
 		},
+
+		/**
+		 * Class to be added to the $el whenever it is selected.
+		 *
+		 * @type {String}
+		 */
+		selectedClass: &#x27;selected&#x27;,
 
 		events: {
 			&#x27;click &gt; *&#x27;: &#x27;handleItemClick&#x27;
@@ -152,10 +159,16 @@ define(function (require, exports, module) {
 		 * @return {[type]}   [description]
 		 */
 		handleItemClick: function handleItemClick(e) {
-			var $el = $(e.currentTarget);
+			var $selected = $(e.currentTarget);
+
+			// remove selected class from all items
+			this.$el.children().removeClass(this.selectedClass);
+
+			// add class to the selected one
+			$selected.addClass(this.selectedClass);
 
 			// run the callback passing the picked model as first argument.
-			this.callback(this.collection.get($el.data(&#x27;__pickerItemModelCid&#x27;)));
+			this.callback(this.collection.get($selected.data(&#x27;__pickerItemModelCid&#x27;)));
 
 			return false;
 		},

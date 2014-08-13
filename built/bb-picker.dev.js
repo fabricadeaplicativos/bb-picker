@@ -49,10 +49,17 @@ define('bb-picker',['require','exports','module','bbcv','lowercase-backbone','lo
 			bbcv.prototype.initialize.call(this, options);
 
 			// pick some options
-			_.each(['callback'], function (prop) {
+			_.each(['callback', 'selectedClass'], function (prop) {
 				this[prop] = options[prop] || this[prop];
 			}, this);
 		},
+
+		/**
+		 * Class to be added to the $el whenever it is selected.
+		 *
+		 * @type {String}
+		 */
+		selectedClass: 'selected',
 
 		events: {
 			'click > *': 'handleItemClick'
@@ -64,10 +71,16 @@ define('bb-picker',['require','exports','module','bbcv','lowercase-backbone','lo
 		 * @return {[type]}   [description]
 		 */
 		handleItemClick: function handleItemClick(e) {
-			var $el = $(e.currentTarget);
+			var $selected = $(e.currentTarget);
+
+			// remove selected class from all items
+			this.$el.children().removeClass(this.selectedClass);
+
+			// add class to the selected one
+			$selected.addClass(this.selectedClass);
 
 			// run the callback passing the picked model as first argument.
-			this.callback(this.collection.get($el.data('__pickerItemModelCid')));
+			this.callback(this.collection.get($selected.data('__pickerItemModelCid')));
 
 			return false;
 		},

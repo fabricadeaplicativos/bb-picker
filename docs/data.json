@@ -72,7 +72,15 @@
         },
         {
             "file": "src/bb-picker.js",
-            "line": 61,
+            "line": 57,
+            "description": "Class to be added to the $el whenever it is selected.",
+            "type": "{String}",
+            "class": "",
+            "module": "BbPicker"
+        },
+        {
+            "file": "src/bb-picker.js",
+            "line": 68,
             "description": "Handles click events",
             "params": [
                 {
@@ -99,8 +107,12 @@
             "line": " src/bb-picker.js:41"
         },
         {
+            "message": "Missing item type\nClass to be added to the $el whenever it is selected.",
+            "line": " src/bb-picker.js:57"
+        },
+        {
             "message": "Missing item type\nHandles click events",
-            "line": " src/bb-picker.js:61"
+            "line": " src/bb-picker.js:68"
         }
     ]
 }
